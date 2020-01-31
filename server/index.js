@@ -132,6 +132,9 @@ if (!dev) {
   }
 }
 
+// Route to initiate authorization code login flow
+app.use(auth.initiateLoginAs);
+
 const noCacheHeaders = {
   'Cache-control': 'no-cache, no-store, must-revalidate',
 };
