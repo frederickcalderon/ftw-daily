@@ -35,6 +35,10 @@ export const amenities = [
     key: 'own_food_allowed',
     label: 'Own food allowed',
   },
+  {
+    key: 'test_amenitie',
+    label: 'Test Amenitie',
+  },
 ];
 
 export const categories = [
@@ -64,3 +68,10 @@ export const dateRangeFilterConfig = {
 export const keywordFilterConfig = {
   active: true,
 };
+
+export const capacityOptions = [
+  { key: '1to3', label: '1 to 3' },
+  { key: '4to6', label: '4 to 6' },
+  { key: '7to9', label: '7 to 9' },
+  { key: '10plus', label: '10 plus' },
+];

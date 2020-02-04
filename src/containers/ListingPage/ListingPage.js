@@ -51,6 +51,7 @@ import SectionReviews from './SectionReviews';
 import SectionHostMaybe from './SectionHostMaybe';
 import SectionRulesMaybe from './SectionRulesMaybe';
 import SectionMapMaybe from './SectionMapMaybe';
+import SectionCapacity from './SectionCapacity';
 import css from './ListingPage.css';
 
 const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
@@ -190,6 +191,7 @@ export class ListingPageComponent extends Component {
       fetchTimeSlotsError,
       categoriesConfig,
       amenitiesConfig,
+      capacityOptions
     } = this.props;
 
     const listingId = new UUID(rawParams.id);
@@ -429,6 +431,7 @@ export class ListingPageComponent extends Component {
                   <SectionDescriptionMaybe description={description} />
                   <SectionFeaturesMaybe options={amenitiesConfig} publicData={publicData} />
                   <SectionRulesMaybe publicData={publicData} />
+                  <SectionCapacity publicData={publicData} options={capacityOptions} />
                   <SectionMapMaybe
                     geolocation={geolocation}
                     publicData={publicData}
@@ -486,6 +489,7 @@ ListingPageComponent.defaultProps = {
   sendEnquiryError: null,
   categoriesConfig: config.custom.categories,
   amenitiesConfig: config.custom.amenities,
+  capacityOptions: config.custom.capacityOptions,
 };
 
 ListingPageComponent.propTypes = {
@@ -527,6 +531,7 @@ ListingPageComponent.propTypes = {
 
   categoriesConfig: array,
   amenitiesConfig: array,
+  capacityOptions: array,
 };
 
 const mapStateToProps = state => {
